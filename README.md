@@ -8,7 +8,7 @@ The project focuses on providing a clean, dark, no-nonsense interface for people
 
 ## 🚀 Live Project
 
-**Live Demo:** 
+**Live Demo:** https://b14-a6-fit-log-beta.vercel.app/
 
 ---
 
