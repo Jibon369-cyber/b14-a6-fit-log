@@ -22,9 +22,6 @@ const HomePage = async () => {
         id='library'
         className='min-h-screen bg-[#000000] px-4 py-16 text-white'>
         <div className='mx-auto max-w-7xl'>
-          <p className='text-sm font-bold tracking-[0.2em] text-[#CCFF00]'>
-            WORKOUT LIBRARY
-          </p>
 
           <h2 className='mt-2 text-3xl font-black uppercase sm:text-4xl'>
             The Library
