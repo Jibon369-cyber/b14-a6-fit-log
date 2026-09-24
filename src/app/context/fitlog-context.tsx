@@ -27,6 +27,35 @@ export const FitLogProvider = ({ children }: { children: React.ReactNode }) => {
   const [toastMessage, setToastMessage] = useState("");
   const [toastVisible, setToastVisible] = useState(false);
 
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Load data from localStorage
+  useEffect(() => {
+    const storedPlan = localStorage.getItem("fitlog-plan");
+    const storedSaved = localStorage.getItem("fitlog-saved");
+
+    if (storedPlan) {
+      setPlan(JSON.parse(storedPlan));
+    }
+
+    if (storedSaved) {
+      setSaved(JSON.parse(storedSaved));
+    }
+
+    setIsInitialized(true);
+  }, []);
+
+  // Save data to localStorage
+  useEffect(() => {
+    if (!isInitialized) {
+      return;
+    }
+
+    localStorage.setItem("fitlog-plan", JSON.stringify(plan));
+
+    localStorage.setItem("fitlog-saved", JSON.stringify(saved));
+  }, [plan, saved, isInitialized]);
+
   const addToPlan = (workout: WorkoutDataTypes) => {
     setPlan((previousPlan) => {
       if (previousPlan.length >= 5) {
@@ -80,6 +109,7 @@ export const FitLogProvider = ({ children }: { children: React.ReactNode }) => {
     setToastVisible(true);
   };
 
+  // Toast timer
   useEffect(() => {
     if (!toastVisible) {
       return;

@@ -1,22 +1,18 @@
 import Hero from "./components/Hero";
-import WorkoutGrid from "./components/WorkoutGrid";
+import WorkoutSearch from "./components/WorkoutSearch";
 
 const HomePage = async () => {
-
   const getWorkouts = async () => {
-    const res = await fetch(" https://api.abcz.workers.dev/api/fitlog");
+    const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
 
     if (!res.ok) {
       throw new Error("Failed to fetch workouts");
     }
 
     return res.json();
-  }
-
+  };
 
   const workouts = await getWorkouts();
-
-  
 
   return (
     <main>
@@ -38,10 +34,8 @@ const HomePage = async () => {
             Twelve lifts covering every major muscle group.
           </p>
 
-          {/* Workout cards */}
-
           <div className='mt-10'>
-            <WorkoutGrid workouts={workouts} />
+            <WorkoutSearch workouts={workouts} />
           </div>
         </div>
       </section>
