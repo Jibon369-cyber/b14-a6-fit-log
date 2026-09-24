@@ -3,9 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useFitLog } from "../context/fitlog-context";
 
 const Navbar = () => {
   const pathname = usePathname();
+
+  const { plan, saved } = useFitLog();
 
   return (
     <nav className='bg-[#000000] text-white border-b border-[#a89191]'>
@@ -54,13 +57,13 @@ const Navbar = () => {
           <Link
             href='/my-plan'
             className='rounded-full bg-[#CCFF00] px-4 py-2 text-sm font-bold text-black'>
-            Plan 0
+            Plan {plan.length}
           </Link>
 
           <Link
             href='/my-plan'
             className='rounded-full border border-[#CCFF00] px-4 py-2 text-sm font-bold text-white'>
-            Saved 0
+            Saved {saved.length}
           </Link>
         </div>
       </div>
