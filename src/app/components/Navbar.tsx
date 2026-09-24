@@ -11,7 +11,7 @@ const Navbar = () => {
   const { plan, saved } = useFitLog();
 
   return (
-    <nav className='bg-[#000000] text-white border-b border-[#a89191]'>
+    <nav className='sticky top-0 z-50 bg-[#000000] text-white border-b border-[#a89191]'>
       <div className='mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8'>
         {/* Logo */}
 
