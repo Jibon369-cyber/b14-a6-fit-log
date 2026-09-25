@@ -14,7 +14,7 @@ const PlanWorkoutCard = ({ workout, listType }: PlanWorkoutCardProps) => {
   const { removeFromPlan, removeFromSaved, markAsDone, addToPlan, showToast } =
     useFitLog();
 
-  // Remove workout
+  // Remove workout func
   const handleRemove = () => {
     if (listType === "plan") {
       removeFromPlan(workout.id);
@@ -25,13 +25,13 @@ const PlanWorkoutCard = ({ workout, listType }: PlanWorkoutCardProps) => {
     }
   };
 
-  // Mark as done
+  // Mark as done func
   const handleMarkAsDone = () => {
     markAsDone(workout.id);
     showToast(`${workout.name} marked as done`);
   };
 
-  // Add saved workout to today's plan
+  // Add saved workout to today's plan func
   const handleAddToPlan = () => {
     addToPlan(workout);
     showToast(`${workout.name} added to today's plan`);
@@ -59,7 +59,7 @@ const PlanWorkoutCard = ({ workout, listType }: PlanWorkoutCardProps) => {
             <p className='mt-2 text-sm text-gray-400'>{workout.equipment}</p>
           </div>
 
-          {/* Remove */}
+          {/* Remove btn */}
           <button
             onClick={handleRemove}
             className='flex h-8 w-8 items-center justify-center rounded-full text-xl text-gray-500 transition hover:bg-red-500/10 hover:text-red-400'

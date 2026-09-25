@@ -16,6 +16,7 @@ const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
 
   const planIsFull = plan.length >= 5;
 
+  // toast for today's plan btn click
   const handleAddToPlan = () => {
     if (alreadyInPlan) {
       showToast("Already in today's plan");
@@ -32,6 +33,7 @@ const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
     showToast(`${workout.name} added to today's plan`);
   };
 
+  // toast for save btn click
   const handleSave = () => {
     if (alreadySaved) {
       showToast("Already saved");
@@ -45,6 +47,7 @@ const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
 
   return (
     <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
+      {/* today's plan btn text condition */}
       <button
         onClick={handleAddToPlan}
         className='rounded-full bg-[#CCFF00] px-6 py-3 font-bold text-black transition hover:bg-[#b8e600] disabled:cursor-not-allowed disabled:opacity-50'>
@@ -55,6 +58,7 @@ const WorkoutActions = ({ workout }: WorkoutActionsProps) => {
             : "Add to today's plan"}
       </button>
 
+      {/* save btn text condition */}
       <button
         onClick={handleSave}
         className='rounded-full border border-[#CCFF00] px-6 py-3 font-bold text-white transition hover:bg-[#CCFF00] hover:text-black disabled:cursor-not-allowed disabled:opacity-50'>

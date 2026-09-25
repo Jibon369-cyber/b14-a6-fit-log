@@ -14,7 +14,7 @@ const MyPlanPage = () => {
 
   const [sortBy, setSortBy] = useState<SortOption>("duration");
 
-  // Current tab অনুযায়ী list
+  // Current tab list
   const currentList = activeTab === "plan" ? plan : saved;
 
   // Metrics
